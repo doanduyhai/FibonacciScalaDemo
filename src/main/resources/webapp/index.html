@@ -1,0 +1,37 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home Spotify</title>
+    <meta name="description" content="Fibonacci REST Service">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- endbuild -->
+</head>
+<body>
+<h1>Fibonacci Rest Service</h1>
+<br/>
+To specify the service port on startup, just set the <strong>FIBONACCI_SERVICE_PORT</strong> environment variable
+otherwise the port defaults to <strong>9000</strong>
+<br/>
+The Fibonacci REST service endpoint is exposed at: <em>http://ip:port/fibonacci/:rank</em> where <em>rank</em> is
+the rank of the Fibonacci suite to compute.
+<br/>
+<blockquote>Please note that the <em>rank</em> value starts at <strong>1</strong>. Providing a non-strictly
+    positive rank will raise an error</blockquote>
+
+<h1>Source code</h1>
+The main logic is implemented inside <em>com.doanduyhai.service.FibonacciService::computeFibonacci(rank: Int)</em>.
+There is an unit-test to cover most code paths for this service.
+<br/>
+For the REST endpoint, we use the <a href="http://scalatra.org/" target="_blank">Scalatra</a> framework. The class
+<em>JettyLauncher</em> will start a web-server and the <strong>Scalatra</strong> servlet is mounted by the class
+<em>ScalatraBootstrap</em>
+<br/>
+There is no unit/integration test for the REST part because it would result in testing Scalatra itself, which
+is redundant
+</body>
+</html>
