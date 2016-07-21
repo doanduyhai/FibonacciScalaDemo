@@ -36,8 +36,10 @@ the application
 
 # Docker image
 
- Optionally, you can get the docker image of the REST service here:
+ Optionally, you can get the docker image of the REST service and run it:
 
+ * docker pull doanduyhai/fibonacci-scala-demo
+ * docker run -p 9000:9000 -d doanduyhai/fibonacci-scala-demo
  
  
 [Maven]: https://maven.apache.org/ 
