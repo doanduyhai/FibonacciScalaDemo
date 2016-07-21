@@ -36,7 +36,7 @@ class FibonacciServiceTest extends FlatSpec with Matchers{
     val rank = 1
 
     //When
-    val result: List[Long] = FibonacciService.computeFibonacci(rank)
+    val result: List[BigInt] = FibonacciService.computeFibonacci(rank)
 
     //Then
     result should be (List(0))
@@ -48,7 +48,7 @@ class FibonacciServiceTest extends FlatSpec with Matchers{
     val rank = 2
 
     //When
-    val result: List[Long] = FibonacciService.computeFibonacci(rank)
+    val result: List[BigInt] = FibonacciService.computeFibonacci(rank)
 
     //Then
     result should be (List(0, 1))
@@ -59,7 +59,7 @@ class FibonacciServiceTest extends FlatSpec with Matchers{
     val rank = 10
 
     //When
-    val result: List[Long] = FibonacciService.computeFibonacci(rank)
+    val result: List[BigInt] = FibonacciService.computeFibonacci(rank)
 
     //Then
     result should be (List(0, 1, 1, 2, 3, 5, 8, 13, 21, 34))
@@ -70,7 +70,7 @@ class FibonacciServiceTest extends FlatSpec with Matchers{
     val rank = 1000000
 
     //When
-    val result: List[Long] = FibonacciService.computeFibonacci(rank)
+    val result: List[BigInt] = FibonacciService.computeFibonacci(rank)
 
     //Then
     result.length should be (1000000)

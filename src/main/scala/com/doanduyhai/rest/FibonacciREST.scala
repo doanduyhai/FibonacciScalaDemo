@@ -13,13 +13,10 @@ class FibonacciREST extends ScalatraServlet with JacksonJsonSupport {
     contentType = formats("json")
   }
 
-  /**
-    * Do not forget to reverse the list returned by the FibonacciService for a correct display
-    */
   get("/:rank") {
     val rank = params("rank").toInt
     try {
-      FibonacciService.computeFibonacci(rank).reverse
+      FibonacciService.computeFibonacci(rank)
     } catch {
       case ex: IllegalArgumentException => BadRequest(ex.getMessage)
       case throwable: Throwable => InternalServerError(throwable.getMessage)

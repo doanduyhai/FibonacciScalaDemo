@@ -1,7 +1,6 @@
 package com.doanduyhai.service
 
 import scala.annotation.tailrec
-import scala.collection.mutable
 import scala.collection.mutable.ListBuffer
 
 object FibonacciService {
@@ -17,9 +16,9 @@ object FibonacciService {
     * @param rank rank for Fibonacci suite to compute. Rank starts at 1 and not 0
     * @return The list of Fibonacci number, in reversed order
     */
-  def computeFibonacci(rank: Int): List[Long] = {
+  def computeFibonacci(rank: Int): List[BigInt] = {
 
-    val fibonacciList: ListBuffer[Long] = ListBuffer.empty[Long]
+    val fibonacciList: ListBuffer[BigInt] = ListBuffer.empty[BigInt]
 
     @tailrec
     def fibonacciTailRec(last: Long, accumulator: Long, rank: Int): Unit = {
